@@ -1,0 +1,34 @@
+<main class="page">
+    <IgbIcon @ref="iconRegistry" hidden />
+
+    <IgbButtonGroup Selection="ButtonGroupSelection.SingleRequired" Select="OnIconSetSelected"
+                    Disabled="@(!IsIconRegistryReady)">
+        <IgbToggleButton Value="@nameof(IconSet.MaterialIcons)" Selected="@(CurrentIconSet == IconSet.MaterialIcons)">
+            Material Icons (デフォルト)<IgbRipple />
+        </IgbToggleButton>
+        <IgbToggleButton Value="@nameof(IconSet.MaterialSymbols)" Selected="@(CurrentIconSet == IconSet.MaterialSymbols)">
+            Material Symbols<IgbRipple />
+        </IgbToggleButton>
+    </IgbButtonGroup>
+
+    <section class="grid-panel">
+        <IgbTreeGrid Data="Employees" PrimaryKey="Id" ForeignKey="ParentId"
+                     AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter"
+                     RowSelection="GridSelectionMode.MultipleCascade"
+                     Width="100%" Height="560px">
+            <IgbGridToolbar>
+                <IgbGridToolbarActions>
+                    <IgbGridToolbarHiding />
+                    <IgbGridToolbarPinning />
+                    <IgbGridToolbarExporter />
+                </IgbGridToolbarActions>
+            </IgbGridToolbar>
+            <IgbColumn Field="Name" Header="Name" DataType="GridColumnDataType.String" Sortable="true" Width="240px" />
+            <IgbColumn Field="Title" Header="Title" DataType="GridColumnDataType.String" Sortable="true" />
+            <IgbColumn Field="Country" Header="Country" DataType="GridColumnDataType.String" Sortable="true" />
+            <IgbColumn Field="Age" Header="Age" DataType="GridColumnDataType.Number" Sortable="true" />
+            <IgbColumn Field="HireDate" Header="Hire Date" DataType="GridColumnDataType.Date" Sortable="true" />
+            <IgbColumn Field="OnPTO" Header="On PTO" DataType="GridColumnDataType.Boolean" Sortable="true" />
+        </IgbTreeGrid>
+    </section>
+</main>

@@ -1,0 +1,14 @@
+.page {
+    --page-gap: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--page-gap);
+    padding: var(--page-gap);
+}
+
+.grid-panel {
+    align-self: stretch;
+    min-width: 0;
+}
